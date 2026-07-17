@@ -1,5 +1,7 @@
 # Bob-Skills
 
+> **Bob workspace config for the Trustmarque/Ultima group** — custom modes, skills, and MCP templates.
+
 A personal library of [IBM Bob](https://www.ibm.com/products/bob) **skills** and supporting resources, including workshop material used for internal Trustmarque/Ultima developer days.
 
 ---
@@ -8,11 +10,29 @@ A personal library of [IBM Bob](https://www.ibm.com/products/bob) **skills** and
 
 ```
 .bob/
+  custom_modes.yaml          # Six brand-specific custom modes (see below)
   skills/
-    migrate-to-bob/          # Skill: migrate repos from Copilot/Cursor/Claude Code → Bob
+    azure-devops/            # Skill: Azure DevOps ticket management via official Microsoft MCP
+    migrate-to-bob/          # Skill: migrate repos from Copilot/Cursor/Claude Code -> Bob
     setup-enterprise-mcps/   # Skill: configure the global enterprise MCP server stack
+mcp-template.json            # Starter MCP config (GitHub, Tavily, Azure DevOps)
 Bob-Workbook.md              # Bobathon workshop workbook (hands-on developer day guide)
 ```
+
+---
+
+## Custom Modes
+
+Six workspace-scoped modes in [`.bob/custom_modes.yaml`](.bob/custom_modes.yaml), each scoped to a brand's file types and reasoning pattern. Drop into the mode picker immediately — no restart needed.
+
+| Mode | Slug | Brand | Scoped to | Purpose |
+|---|---|---|---|---|
+| **SAM Analyst** | `sam-analyst` | Livingstone | licence data, CSVs, contract docs | Entitlement vs usage calc, audit prep, vendor negotiation briefings |
+| **IA-Connect Developer** | `ia-connect-developer` | Ultima Labs | `.ps1`, JSON, YAML | IA-Connect RPA automation — prefers pre-built actions over custom code |
+| **Cloud FinOps** | `cloud-finops` | Ultima IA-Cloud | `.tf`, `.bicep`, Azure configs | Cost optimisation and governance guardrails, pairs with `azure-mcp-server` |
+| **JAM SRE/DevOps** | `jam-sre` | Just After Midnight | Jenkinsfiles, Ansible, Terraform, GitLab CI | Incident-response tone, multi-cloud, CMS-aware (AEM/Sitecore/Umbraco) |
+| **Acutest QA** | `acutest-qa` | Acutest | `*.test.*`, `*.spec.*`, test dirs | Risk-first test triage and strategy, Project Rescue scenarios |
+| **Modernisation** | `modernisation` | Trustmarque | `.cbl`, `.rpg`, `.java`, legacy paths | COBOL/RPG/legacy Java explanation and refactoring — Bob's strongest differentiator |
 
 ---
 
